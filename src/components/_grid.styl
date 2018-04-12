@@ -1,0 +1,48 @@
+@import "../_variables.styl"
+
+column(size = '')
+  for col in (1..12)
+    if size
+      @media all and (min-width $breakpoints[size])
+        &__col_{size}{col}of12
+          width (col/12)*100%
+          padding 0 15px
+          box-sizing border-box
+    else
+      &__col_{col}of12
+        width (col/12)*100%
+        padding 0 15px
+        box-sizing border-box
+
+offset(size='')
+  for col in (1..12)
+    if size
+      @media all and (min-width $breakpoints[size])
+        &__col_{size}Offset{col}of12
+          margin-left (col/12)*100%
+    else
+      &__col_offset{col}of12
+        margin-left (col/12)*100%
+
+
+.container
+  margin 0 auto
+  max-width 1200px
+  padding 0 30px
+  box-sizing border-box
+
+.row
+  display flex
+  flex-wrap wrap
+  margin 0 -15px
+  column()
+  for size, width in $breakpoints
+    column(size)
+  offset()
+  for size, width in $breakpoints
+    offset(size)
+  &_noGutter
+    margin 0
+  &__col
+    &_noGutter
+      padding 0

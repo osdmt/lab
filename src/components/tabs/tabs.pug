@@ -1,0 +1,15 @@
+mixin tabs(data)
+    .container
+        .row.tabs
+            .row__col_12of12.row__col_md4of12
+                .tabs__items
+                    each tab in data.tabs
+                        .tabs__item
+                            .tabs__pill=tab.pill
+                            .tabs__itemPane
+                                .row
+                                    .row__col_12of12.row__col_md10of12   
+                                        h2.heading.heading_sizeMd= tab.pane.title
+                                        p.paragraph= tab.pane.body
+            .row__col_md8of12
+                .tabs__pane

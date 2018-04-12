@@ -1,0 +1,43 @@
+@import '../../_variables'
+
+@font-face {
+    font-family: 'Museo Sans Cyrl 300';
+    src: url('fonts/MuseoSansCyrl-300.woff2') format('woff2'),
+        url('fonts/MuseoSansCyrl-300.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TwentytwelveSansC';
+    src: url('fonts/TwentytwelveSansC.woff2') format('woff2'),
+        url('fonts/TwentytwelveSansC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.page
+    margin 0
+    padding 0
+    font-family 'Museo Sans Cyrl 300', serif
+    font-size 16px
+    line-height 1.5em
+    min-width 320px
+
+.heading
+    font-family $font-accented
+    font-size 30px
+    line-height 1.175em
+    color: rgb(46, 49, 146);
+    margin-bottom: 1.75em
+    @media all and (min-width $breakpoints.md)
+        font-size 40px;
+        text-align center;
+    &_sizeMd
+        text-align left
+        font-size: 18px;
+        color: rgb(46, 49, 146);
+        margin-bottom: 1.25em
+        @media all and (min-width $breakpoints.md)
+            font-size: 24px;
